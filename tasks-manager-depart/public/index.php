@@ -1,17 +1,19 @@
-<?php 
+<?php
 //Variables
-require'../src/functions.php';
+require '../src/functions.php';
 $users = readFromFile('data/users.json');
-$username = $_POST['username'];
+$username = "";
 $message = "";
 
 //Vérification Login
-foreach($users as $user) {
-    if($user['username'] === $username) {
-        redirect("task-index.php");
-    }
-    else {
-        $message = "Ce nom d'utilisateur n'existe pas";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+   $username = $_POST['username'];
+    foreach ($users as $user) {
+        if ($user['username'] === $username) {
+            redirect("task-index.php");
+        } else {
+            $message = "Ce nom d'utilisateur n'existe pas";
+        }
     }
 }
 ?>
@@ -23,14 +25,16 @@ foreach($users as $user) {
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestionnaire de Tâches</title>
     <link href="css/style.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/44720d3ccc.js" crossorigin="anonymous"></script> 
+    <script src="https://kit.fontawesome.com/44720d3ccc.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header class="bg-primary text-white py-3">
         <div class="container header-content">
@@ -39,7 +43,7 @@ foreach($users as $user) {
                 <i class="fa-solid fa-list-check"></i> Gestionnaire de Tâches
             </h1>
         </div>
-    </header>    
+    </header>
 
     <div class="container mt-4">
         <div class="row justify-content-center">
@@ -63,4 +67,5 @@ foreach($users as $user) {
         <p>&copy; 2024 Gestionnaire de Tâches</p>
     </footer>
 </body>
+
 </html>
