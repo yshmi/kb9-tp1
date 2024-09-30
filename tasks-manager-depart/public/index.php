@@ -40,4 +40,5 @@ require "views/partials/header.php";
         <p>&copy; 2024 Gestionnaire de Tâches</p>
     </footer>
 </body>
+
 </html>
