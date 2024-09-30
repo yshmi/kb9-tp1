@@ -7,7 +7,9 @@ function redirect($url) {
 
 
 function readFromFile(string $filename): array {
+    $users  = json_decode(file_get_contents($filename), true); //Retourne un tableau associatif
     
+    return $users;
 }
 
 function writeToFile(string $filename, array $data): void {
