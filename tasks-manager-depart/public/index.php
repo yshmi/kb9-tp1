@@ -36,9 +36,6 @@ require "views/partials/header.php";
             </div>
         </div>
     </div>
-    <footer class="bg-light text-center py-3 mt-4">
-        <p>&copy; 2024 Gestionnaire de Tâches</p>
-    </footer>
-</body>
-
-</html>
+<?php
+require "views/partials/footer.php";
+?>
