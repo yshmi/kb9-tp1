@@ -26,6 +26,7 @@ function updateTask(string $filename, int $index, array $updatedTask): void {
 
 function deleteTask(string $filename, int $index): void {
     
+    
 }
 
 function renderOptions(string $file, string $itemSelected = ""):string {
