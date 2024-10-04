@@ -17,6 +17,8 @@ if ($tasks === []) {
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    
+
 
 
 
@@ -47,7 +49,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="col-md-3">
                     <!-- Statut -->
                     <select class="form-select">
-                    <option value="all">Tous les statuts</option>
+                    <option value="all" id="selectedStatus">Tous les statuts</option>
                         <?php
                         foreach ($statuses as $status) {
                             ?>
@@ -105,9 +107,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="container">
                                 <!-- TODO : Modifier une tâche -->
                                 <form action="" method="POST" class="d-inline-block">
+                                <button class="btn btn-warning">Modifier</button>
                                 </form>
                                 <!-- TODO : Supprimer une tâche -->
                                 <form action="" method="POST" class="d-inline-block">
+                                    <button class="btn btn-danger" id="deleteBtn">Supprimer</button>
                                 </form>
                             </div>
                         </div>
