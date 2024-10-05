@@ -15,11 +15,33 @@ if ($tasks === []) {
 }
 
 
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
+    //les filtres (déroulantes + zone rechercher)
+
+
+    $selectedStatus = 'all';
+    $selectedCategory = 'all';
+
+    if (isset($_POST['filterBtn'])) {
+        $selectedStatus = $_POST['selectedStatus'];
+        $selectedCategory = $_POST['selectedCategory'];
+
+        var_dump($selectedStatus);
+        var_dump($selectedCategory);
+    }
+
+
+
+    //les boutons modifier et supprimer
+    if (isset($_POST['deleteBtn'])) {
+        redirect('task-delete.php');
+    }
+
+    if (isset($_POST['editBtn'])) {
+        redirect('task-edit.php');
+    }
 
 
 
@@ -34,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="row">
                 <div class="col-md-3">
                     <!-- Catégorie -->
-                    <select class="form-select">
+                    <select class="form-select" id="selectedCategory" name="selectedCategory">
                         <option value="all">Toutes les catégories</option>
                         <?php
                         foreach ($categories as $category) {
@@ -48,8 +70,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="col-md-3">
                     <!-- Statut -->
-                    <select class="form-select">
-                    <option value="all" id="selectedStatus">Tous les statuts</option>
+                    <select class="form-select" id="selectedStatus" name="selectedStatus">
+                        <option value="all">Tous les statuts</option>
                         <?php
                         foreach ($statuses as $status) {
                             ?>
@@ -64,12 +86,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <!-- Recherche par texte -->
                     <textarea class="form-control" placeholder="Rechercher par texte" rows="1"></textarea>
 
-                     
+
 
                 </div>
 
                 <div class="col-md-2">
-                    <button class="btn btn-primary">Filtrer</button>
+                    <button class="btn btn-primary" name="filterBtn">Filtrer</button>
 
                 </div>
             </div>
@@ -96,6 +118,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 if ($task['status'] == 'À Débuter')
                     $status = 'secondary';
+
+
                 ?>
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
                     <div class="card card-custom">
@@ -107,11 +131,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="container">
                                 <!-- TODO : Modifier une tâche -->
                                 <form action="" method="POST" class="d-inline-block">
-                                <button class="btn btn-warning">Modifier</button>
+                                    <button class="btn btn-warning" id="editBtn" name="editBtn">Modifier</button>
                                 </form>
                                 <!-- TODO : Supprimer une tâche -->
                                 <form action="" method="POST" class="d-inline-block">
-                                    <button class="btn btn-danger" id="deleteBtn">Supprimer</button>
+                                    <button class="btn btn-danger" id="deleteBtn" name="deleteBtn">Supprimer</button>
                                 </form>
                             </div>
                         </div>
@@ -119,6 +143,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <?php
             }
+
+
             ?>
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="card card-custom">
