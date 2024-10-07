@@ -3,7 +3,7 @@ require "views/partials/head.php";
 require "views/partials/header.php";
 require '../src/functions.php';
 
-
+session_start();
 
 $tasks = readFromFile('data/user1-tasks.json');
 $categories = readFromFile('data/categories.json');
@@ -15,7 +15,21 @@ if ($tasks === []) {
 }
 
 
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    //les boutons modifier et supprimer
+    if(isset($_POST['taskAddBtn'])) {
+        redirect('task-add.php');
+    }
+    if (isset($_POST['deleteBtn'])) {
+        redirect('task-delete.php');
+    }
+    if (isset($_POST['editBtn'])) {
+        redirect('task-edit.php');
+    }
+    
+
 
 
     //les filtres (déroulantes + zone rechercher)
@@ -23,28 +37,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $selectedStatus = 'all';
     $selectedCategory = 'all';
+    $textSearch = "";
 
     if (isset($_POST['filterBtn'])) {
         $selectedStatus = $_POST['selectedStatus'];
         $selectedCategory = $_POST['selectedCategory'];
+        $textSearch = str_replace(' ', '', $_POST['textSearch']);
 
-        var_dump($selectedStatus);
+        //function isStatus ($tasks) {
+            //foreach($tasks as $task) {
+                //if($task['status'] == 'À Débuter') {
+                //    echo 'BONJOUR';
+    
+                //    return true;
+                //}
+               // else return false;
+           // }
+            
+
+        //}
+        
+        //array_filter($tasks,"isStatus");
         var_dump($selectedCategory);
+        var_dump($selectedStatus);
+        var_dump($textSearch);
+        
+
+
+
+        
+
+
+
     }
-
-
-
-    //les boutons modifier et supprimer
-    if (isset($_POST['deleteBtn'])) {
-        redirect('task-delete.php');
-    }
-
-    if (isset($_POST['editBtn'])) {
-        redirect('task-edit.php');
-    }
-
-
-
 }
 ?>
 
@@ -84,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <div class="col-md-4">
                     <!-- Recherche par texte -->
-                    <textarea class="form-control" placeholder="Rechercher par texte" rows="1"></textarea>
+                    <textarea class="form-control" placeholder="Rechercher par texte" rows="1" id="textSearch" name="textSearch"></textarea>
 
 
 
@@ -99,6 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <!-- TODO : Ajouter une tâche -->
         <form action="" method="POST" class="mb-2">
+            <button class="btn btn-success" name="taskAddBtn">Ajouter une tâche</button>
             <h1 style="padding-bottom: 10px; color: red;"> <?= $noTasksMessage ?> </h1>
 
 
@@ -118,7 +144,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 if ($task['status'] == 'À Débuter')
                     $status = 'secondary';
-
 
                 ?>
                 <div class="col-12 col-md-6 col-lg-4 mb-4">
@@ -144,7 +169,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <?php
             }
 
-
             ?>
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="card card-custom">
@@ -166,6 +190,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 </div>
+
 <?php
 require "views/partials/footer.php";
 ?>

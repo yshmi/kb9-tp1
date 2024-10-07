@@ -32,3 +32,7 @@ function deleteTask(string $filename, int $index): void {
 function renderOptions(string $file, string $itemSelected = ""):string {
    
 }
+
+function testerStatut($var) {
+    
+}
