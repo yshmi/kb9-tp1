@@ -1,93 +1,79 @@
-{
-    "19": {
-        "title": "Nager à la piscine",
-        "category": "Sport",
-        "date": "2024-07-28",
-        "description": "Nager 30 minutes à la piscine",
-        "status": "Terminé"
-    },
-    "20": {
+[
+    {
         "title": "Apprendre une nouvelle langue",
         "category": "Personnel",
         "date": "2024-07-29",
-        "description": "Commencer à apprendre le japonais",
+        "description": "Commencer \u00e0 apprendre le japonais",
         "status": "En Cours"
     },
-    "21": {
+    {
         "title": "Nettoyer le garage",
         "category": "Maison",
         "date": "2024-07-30",
         "description": "Ranger et nettoyer le garage",
-        "status": "Terminé"
+        "status": "Termin\u00e9"
     },
-    "22": {
+    {
         "title": "Planifier un voyage",
         "category": "Travail",
         "date": "2024-08-01",
         "description": "Organiser le voyage d'affaires",
-        "status": "À Débuter"
+        "status": "\u00c0 D\u00e9buter"
     },
-    "23": {
+    {
         "title": "Jouer au tennis",
         "category": "Sport",
         "date": "2024-08-02",
         "description": "Faire un match de tennis avec un ami",
-        "status": "À Débuter"
+        "status": "\u00c0 D\u00e9buter"
     },
-    "24": {
-        "title": "Aller au cinéma",
+    {
+        "title": "Aller au cin\u00e9ma",
         "category": "Personnel",
         "date": "2024-08-03",
-        "description": "Voir le dernier film au cinéma",
+        "description": "Voir le dernier film au cin\u00e9ma",
         "status": "En Cours"
     },
-    "25": {
+    {
         "title": "Laver les vitres",
         "category": "Maison",
         "date": "2024-08-04",
-        "description": "Nettoyer toutes les fenêtres de la maison",
-        "status": "Terminé"
+        "description": "Nettoyer toutes les fen\u00eatres de la maison",
+        "status": "Termin\u00e9"
     },
-    "26": {
-        "title": "Rédiger une proposition",
+    {
+        "title": "R\u00e9diger une proposition",
         "category": "Travail",
         "date": "2024-08-05",
-        "description": "Écrire une proposition pour un nouveau projet",
+        "description": "\u00c9crire une proposition pour un nouveau projet",
         "status": "En Cours"
     },
-    "27": {
+    {
         "title": "Faire du ski",
         "category": "Sport",
         "date": "2024-08-06",
-        "description": "Passer la journée à la montagne et faire du ski",
-        "status": "Terminé"
+        "description": "Passer la journ\u00e9e \u00e0 la montagne et faire du ski",
+        "status": "Termin\u00e9"
     },
-    "28": {
+    {
         "title": "Jardiner",
         "category": "Personnel",
         "date": "2024-08-07",
-        "description": "Planter des fleurs et des légumes",
-        "status": "À Débuter"
+        "description": "Planter des fleurs et des l\u00e9gumes",
+        "status": "\u00c0 D\u00e9buter"
     },
-    "29": {
-        "title": "Nettoyer le sous-sol",
-        "category": "Maison",
-        "date": "2024-08-08",
-        "description": "Organiser et nettoyer le sous-sol",
-        "status": "En Cours"
-    },
-    "30": {
-        "title": "Faire une analyse de marché",
+    {
+        "title": "Faire une analyse de march\u00e9",
         "category": "Travail",
         "date": "2024-08-09",
-        "description": "Analyser le marché pour la nouvelle campagne",
-        "status": "Terminé"
+        "description": "Analyser le march\u00e9 pour la nouvelle campagne",
+        "status": "Termin\u00e9"
     },
-    "31": {
+    {
         "title": "Faire de l'escalade",
         "category": "Sport",
         "date": "2024-08-10",
         "description": "Grimper en salle d'escalade",
-        "status": "À Débuter"
+        "status": "\u00c0 D\u00e9buter"
     }
-}
+]

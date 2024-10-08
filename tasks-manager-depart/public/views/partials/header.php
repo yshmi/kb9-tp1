@@ -5,6 +5,13 @@
             <h1 class="header-title mb-0">
                 <i class="fa-solid fa-list-check"></i> Gestionnaire de Tâches
             </h1>
+
+            <?php if (isset($_GET['username'])): ?>
+                <form action="index.php" method="GET" class="d-inline">
+                    <button class="btn btn-outline-light mb-0" type="submit">Déconnexion</button>
+                </form>
+            <?php endif; ?>
+
         </div>
     </header>    
 
